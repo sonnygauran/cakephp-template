@@ -1,0 +1,8 @@
+
+# Ignore composer libraries
+Vendor/autoload.php
+Vendor/bin
+Vendor/composer
+Vendor/phpunit
+Vendor/symfony
+Vendor/cakephp
