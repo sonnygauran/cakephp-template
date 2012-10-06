@@ -1,0 +1,22 @@
+{                                                                                                                                            
+    "require": {
+        "phpunit/phpunit": "3.7.*",
+        "cakephp/cakephp": "2.2.2"
+    },
+    "config": { 
+        "vendor-dir": "Vendor" 
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "cakephp/cakephp",
+                "version": "2.2.2",
+                "dist": {
+                    "url": "https://github.com/cakephp/cakephp/zipball/2.2.2",
+                    "type": "zip"
+                }
+            }
+        }
+    ]
+}
