@@ -37,6 +37,11 @@ composer install
 git add composer.lock
 git commit -m 'Adding lock on composer libraries'
 
+# Add composer autoload to bootstrap
+echo "\n\trequire ROOT . DS . APP_DIR . DS . 'Vendor' . DS . 'autoload.php';" >> Config/bootstrap.php
+git add Config/bootstrap.php
+git commit -m 'Added composer autoload file to bootstrap'
+
 # Fix the Cakephp path
 php prepare_cakephp.php
 git add webroot/index.php
