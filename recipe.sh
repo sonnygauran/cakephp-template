@@ -1,12 +1,11 @@
 #!/bin/sh
 
-PROJECT_NAME="project";
+PROJECT_NAME="project"
 
-if [ $# -eq 1 ]; then
-    PROJECT_NAME=$1
+if [ $# -eq 0 ]; then
+    echo "Enter project name: (eg. 'project')"
+    read PROJECT_NAME
 fi
-
-echo $PROJECT_NAME | pbcopy
 
 # Get the template files
 git clone https://github.com/sonnygauran/cakephp-template.git $PROJECT_NAME.git
@@ -38,4 +37,15 @@ composer install
 git add composer.lock
 git commit -m 'Adding lock on composer libraries'
 
-echo "cd '$PROJECT_NAME.git'    <----- Execute this and get started!"
+# Fix the Cakephp path
+php prepare_cakephp.php
+git add webroot/index.php
+git commit -m 'Replaced CAKE_CORE_INCLUDE_PATH with path to composer-installed CakePHP'
+
+rm README.md
+rm recipe.sh
+rm prepare_cakephp.php
+
+echo "cd $PROJECT_NAME.git" | pbcopy
+
+echo "cd '$PROJECT_NAME.git'    <----- Execute this and get started! (or just hit Paste)"
