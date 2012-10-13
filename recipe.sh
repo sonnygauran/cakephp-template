@@ -7,6 +7,11 @@ if [ $# -eq 0 ]; then
     read PROJECT_NAME
 fi
 
+if [ "$PROJECT_NAME" == "" ]; then
+    echo "Using 'project' as project name..."
+    PROJECT_NAME="project"
+fi
+
 # Get the template files
 git clone https://github.com/sonnygauran/cakephp-template.git $PROJECT_NAME.git
 cd $PROJECT_NAME.git
