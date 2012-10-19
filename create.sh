@@ -2,6 +2,8 @@
 
 PROJECT_NAME="project"
 
+filename=$(basename $0)
+
 if [ $# -eq 0 ]; then
     echo "Enter project name: (eg. 'project')"
     read PROJECT_NAME
@@ -54,7 +56,7 @@ git add webroot/test.php
 git commit -m 'Replaced CAKE_CORE_INCLUDE_PATH with path to composer-installed CakePHP'
 
 rm README.md
-rm recipe.sh
+rm $filename
 rm prepare_cakephp.php
 
 git add .testBootstrap.php phpunit.xml test
@@ -63,3 +65,9 @@ git commit -m 'Added local test runner with configurations'
 echo "cd $PROJECT_NAME.git" | pbcopy
 
 echo "cd '$PROJECT_NAME.git'    <----- Execute this and get started! (or just hit Paste)"
+echo ""
+echo "Notes:"
+echo " *  \`.sh\` is a local file loaded/source by \`./cake\` and \`./test\`."
+echo "        \`echo \".sh\" >> .gitignore\` when required."
+echo ""
+echo "Enjoy!"

@@ -31,7 +31,7 @@ use `./test` to run your non-cake test cases.
 ## Executables
 * `./cake test` to run CakePHP tests.
   * Run `./cake test core Basics` to check PHPUnit and run a CakePHP test.
-* `./test BlankTest.php` to verify that PHPUnit is working.
+* `./test Vendor/phpunit/phpunit/Tests/Framework/SuiteTest.php` to verify that PHPUnit is working.
 
 ## The `phpunit.xml`
   * This file is used by both `./cake test` and `./test` test runners.
