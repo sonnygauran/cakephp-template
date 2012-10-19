@@ -2,8 +2,6 @@
 
 PROJECT_NAME="project"
 
-filename=$(basename $0)
-
 if [ $# -eq 0 ]; then
     echo "Enter project name: (eg. 'project')"
     read PROJECT_NAME
@@ -56,7 +54,7 @@ git add webroot/test.php
 git commit -m 'Replaced CAKE_CORE_INCLUDE_PATH with path to composer-installed CakePHP'
 
 rm README.md
-rm $filename
+rm create.sh
 rm prepare_cakephp.php
 
 git add .testBootstrap.php phpunit.xml test
