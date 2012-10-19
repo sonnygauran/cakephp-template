@@ -2,7 +2,7 @@
 
 To start a CakePHP project, execute the following:
 
-    curl -L https://raw.github.com/sonnygauran/cakephp-template/master/recipe.sh | sh -x
+    curl -L https://raw.github.com/sonnygauran/cakephp-template/master/create.sh | sh -x
 
 This will create a folder `project.git`. Just rename the folder to your initial project name.
 
