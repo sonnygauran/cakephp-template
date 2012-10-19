@@ -50,11 +50,15 @@ git commit -m 'Added composer autoload file to bootstrap'
 # Fix the Cakephp path
 php prepare_cakephp.php
 git add webroot/index.php
+git add webroot/test.php
 git commit -m 'Replaced CAKE_CORE_INCLUDE_PATH with path to composer-installed CakePHP'
 
 rm README.md
 rm recipe.sh
 rm prepare_cakephp.php
+
+git add .testBootstrap.php phpunit.xml test
+git commit -m 'Added local test runner with configurations'
 
 echo "cd $PROJECT_NAME.git" | pbcopy
 

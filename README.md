@@ -17,6 +17,22 @@ This installs the following:
 * Croogo (via separate branch)
 * PHPUnit (via composer)
 
-## CakePHP
 
 use `./cake` to execute the cake shell.
+
+use `./test` to run your non-cake test cases.
+
+
+## Environment
+* The file `.sh` contains locally-specific configurations for the script. Modify as required. This may need to be added to `.gitignore`.
+* The php.ini entry `date.timezone` is set during runtime. Defaults value is UTC.
+* The `CAKE_CORE_INCLUDE_PATH` is already adjusted to use the CakePHP build from the composer install.
+
+## Executables
+* `./cake test` to run CakePHP tests.
+  * Run `./cake test core Basics` to check PHPUnit and run a CakePHP test.
+* `./test BlankTest.php` to verify that PHPUnit is working.
+
+## The `phpunit.xml`
+  * This file is used by both `./cake test` and `./test` test runners.
+  * The file `.testBootstrap.php` is the bootstrap file defined on `phpunit.xml`
